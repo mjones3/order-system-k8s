@@ -6,11 +6,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: postgres
+      app: postgres-inventory
   template:
     metadata:
       labels:
-        app: postgres
+        app: postgres-inventory
     spec:
       containers:
         - name: postgres

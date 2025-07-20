@@ -26,3 +26,6 @@ spec:
             limits:
               cpu: {{ .Values.resources.limits.cpu }}
               memory: {{ .Values.resources.limits.memory }}
+          envFrom:
+            - configMapRef:
+                name: inventory-service-config

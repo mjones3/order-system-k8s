@@ -3,12 +3,12 @@ kind: ConfigMap
 metadata:
   name: payment-service-config
 data:
-  PG_CONTAINER: "payment-service-pg"
-  DATASOURCE_PORT: "3306"
+  PG_CONTAINER: "postgres-paymentdb"
+  DATASOURCE_PORT: "5432"
   ENVIRONMENT: "local"
   PG_DB: "paymentdb"
   PG_USER: "paymentuser"
   PG_PASS: "paymentpass"
   PG_PORT: "5432"
-  DATASOURCE_URL: "jdbc:postgresql://payment-service-pg:5432/paymentdb"
+  DATASOURCE_URL: "jdbc:postgresql://postgres-paymentdb:5432/paymentdb"
   

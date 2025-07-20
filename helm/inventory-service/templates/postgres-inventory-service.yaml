@@ -4,7 +4,7 @@ metadata:
   name: postgres-inventorydb
 spec:
   selector:
-    app: postgres
+    app: postgres-inventory
   ports:
     - port: 5432
       targetPort: 5432

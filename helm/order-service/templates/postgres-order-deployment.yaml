@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: postgres
+  name: postgres-orderdb
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: postgres
+      app: postgres-order
   template:
     metadata:
       labels:
-        app: postgres
+        app: postgres-order
     spec:
       containers:
         - name: postgres

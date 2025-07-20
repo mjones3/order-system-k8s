@@ -6,11 +6,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: postgres
+      app: postgres-payment
   template:
     metadata:
       labels:
-        app: postgres
+        app: postgres-payment
     spec:
       containers:
         - name: postgres
@@ -33,7 +33,7 @@ spec:
               cpu: "500m"
           volumeMounts:
             - name: postgres-storage
-              mountPath: /var/lib/postgresql/data
+              mountPath: /var/lib/postgresql-payment/data
       volumes:
         - name: postgres-storage
           persistentVolumeClaim:

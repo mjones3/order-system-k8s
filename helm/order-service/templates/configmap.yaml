@@ -3,12 +3,12 @@ kind: ConfigMap
 metadata:
   name: order-service-config
 data:
-  PG_CONTAINER: "order-service-pg"
-  DATASOURCE_PORT: "3306"
+  PG_CONTAINER: "postgres-orderdb"
+  DATASOURCE_PORT: "5432"
   ENVIRONMENT: "local"
   PG_DB: "orderdb"
   PG_USER: "orderuser"
   PG_PASS: "orderpass"
   PG_PORT: "5432"
-  DATASOURCE_URL: "jdbc:postgresql://order-service-pg:5432/orderdb"
+  DATASOURCE_URL: "jdbc:postgresql://postgres-orderdb:5432/orderdb"
   

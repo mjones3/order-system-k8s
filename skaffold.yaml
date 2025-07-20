@@ -28,21 +28,21 @@ deploy:
           env.DATASOURCE_PORT: "5432"
           env.ENVIRONMENT: "localhost"
         version: 0.1.0
-      - name: inventory-service
-        chartPath: helm/inventory-service
-        valuesFiles:
-          - helm/inventory-service/values.yaml
-        setValues:
-          env.DATASOURCE_URL: "jdbc:postgresql://inventory-service-pg:5432/orderdb"
-          env.DATASOURCE_PORT: "5432"
-          env.ENVIRONMENT: "localhost"
-        version: 0.1.0
-      # - name: payment-service
-      #   chartPath: helm/payment-service
+      # - name: inventory-service
+      #   chartPath: helm/inventory-service
       #   valuesFiles:
-      #     - helm/payment-service/values.yaml
+      #     - helm/inventory-service/values.yaml
       #   setValues:
-      #     env.DATASOURCE_URL: "jdbc:postgresql://payment-service-pg:5432/paymentdb"
+      #     env.DATASOURCE_URL: "jdbc:postgresql://inventory-service-pg:5432/inventorydb"
       #     env.DATASOURCE_PORT: "5432"
       #     env.ENVIRONMENT: "localhost"
       #   version: 0.1.0
+      - name: payment-service
+        chartPath: helm/payment-service
+        valuesFiles:
+          - helm/payment-service/values.yaml
+        setValues:
+          env.DATASOURCE_URL: "jdbc:postgresql://payment-service-pg:5432/paymentdb"
+          env.DATASOURCE_PORT: "5432"
+          env.ENVIRONMENT: "localhost"
+        version: 0.1.0

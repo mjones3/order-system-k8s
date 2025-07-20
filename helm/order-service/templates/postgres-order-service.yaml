@@ -4,7 +4,7 @@ metadata:
   name: postgres-orderdb
 spec:
   selector:
-    app: postgres
+    app: postgres-order
   ports:
     - port: 5432
       targetPort: 5432

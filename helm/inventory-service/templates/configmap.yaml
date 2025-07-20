@@ -3,12 +3,12 @@ kind: ConfigMap
 metadata:
   name: inventory-service-config
 data:
-  PG_CONTAINER: "inventory-service-pg"
-  DATASOURCE_PORT: "3306"
+  PG_CONTAINER: "postgres-inventorydb"
+  DATASOURCE_PORT: "5432"
   ENVIRONMENT: "local"
   PG_DB: "inventorydb"
   PG_USER: "inventoryuser"
   PG_PASS: "inventorypass"
   PG_PORT: "5432"
-  DATASOURCE_URL: "jdbc:postgresql://inventory-service-pg:5432/inventorydb"
+  DATASOURCE_URL: "jdbc:postgresql://postgres-inventorydb:5432/inventorydb"
   

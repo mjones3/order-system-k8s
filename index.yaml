@@ -1,0 +1,13 @@
+apiVersion: v1
+entries:
+  order-system:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2025-07-11T19:16:01.535718-04:00"
+    description: A Helm chart for deploying the Order System
+    digest: 225ff7bcc7cdd65dc925357f538daead8735a063b1d613a200369cd04d507ab1
+    name: order-system
+    urls:
+    - https://mjones3-order-system-helm-chart-repo.s3.amazonaws.com/charts/order-system-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-07-11T19:16:01.534331-04:00"

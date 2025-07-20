@@ -1,9 +1,13 @@
 /Users/mjones/work/order-system/apps/inventory-service/src/main/java/com/elusivemel/inventoryservice/InventoryServiceApplication.java
+/Users/mjones/work/order-system/apps/inventory-service/src/main/java/com/elusivemel/inventoryservice/config/XRayConfig.java
 /Users/mjones/work/order-system/apps/inventory-service/src/main/java/com/elusivemel/inventoryservice/controller/InventoryController.java
 /Users/mjones/work/order-system/apps/inventory-service/src/main/java/com/elusivemel/inventoryservice/dto/InventoryRequest.java
 /Users/mjones/work/order-system/apps/inventory-service/src/main/java/com/elusivemel/inventoryservice/dto/InventoryRequestItem.java
 /Users/mjones/work/order-system/apps/inventory-service/src/main/java/com/elusivemel/inventoryservice/dto/InventoryResponse.java
 /Users/mjones/work/order-system/apps/inventory-service/src/main/java/com/elusivemel/inventoryservice/dto/InventoryResponseItem.java
+/Users/mjones/work/order-system/apps/inventory-service/src/main/java/com/elusivemel/inventoryservice/dto/ReleaseInventoryRequest.java
+/Users/mjones/work/order-system/apps/inventory-service/src/main/java/com/elusivemel/inventoryservice/dto/ReleaseInventoryRequestItem.java
 /Users/mjones/work/order-system/apps/inventory-service/src/main/java/com/elusivemel/inventoryservice/model/Inventory.java
 /Users/mjones/work/order-system/apps/inventory-service/src/main/java/com/elusivemel/inventoryservice/repository/InventoryRepository.java
+/Users/mjones/work/order-system/apps/inventory-service/src/main/java/com/elusivemel/inventoryservice/service/InventoryService.java
 /Users/mjones/work/order-system/apps/inventory-service/src/main/java/com/elusivemel/inventoryservice/util/InventoryUtil.java

@@ -75,6 +75,10 @@ module "ecs" {
   vpc_endpoint_sg = module.network.vpc_endpoint_sg
 }
 
+module "cognito" {
+  source = "./modules/cognito"
+}
+
 module "ecs_order_service" {
   source              = "./modules/services/order_service"
   public_subnets      = module.network.public_subnets

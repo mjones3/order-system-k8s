@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres-inventorydb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgres
+  template:
+    metadata:
+      labels:
+        app: postgres
+    spec:
+      containers:
+        - name: postgres
+          image: postgres:17-alpine
+          env:
+            - name: POSTGRES_DB
+              value: "inventorydb"
+            - name: POSTGRES_USER
+              value: "inventoryuser"
+            - name: POSTGRES_PASSWORD
+              value: "inventorypass"
+          ports:
+            - containerPort: 5432
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "250m"
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          volumeMounts:
+            - name: postgres-storage-inventory
+              mountPath: /var/lib/postgresql-inventory/data
+      volumes:
+        - name: postgres-storage-inventory
+          persistentVolumeClaim:
+            claimName: postgres-inventory-pvc

@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: inventory-service-config
+data:
+  PG_CONTAINER: "inventory-service-pg"
+  DATASOURCE_PORT: "3306"
+  ENVIRONMENT: "local"
+  PG_DB: "inventorydb"
+  PG_USER: "inventoryuser"
+  PG_PASS: "inventorypass"
+  PG_PORT: "5432"
+  DATASOURCE_URL: "jdbc:postgresql://inventory-service-pg:5432/inventorydb"
+  

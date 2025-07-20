@@ -10,7 +10,63 @@ data "aws_iam_policy_document" "ecs_task_execution_assume_role" {
   }
 }
 
-# 2) The IAM role that the ECS task will assume.
+
+#Elastic Kubernetes Service
+resource "aws_iam_role" "eks_role" {
+  assume_role_policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Action = "sts:AssumeRole"
+        Principal = {
+          Service = "eks.amazonaws.com"
+        }
+        Effect = "Allow"
+      },
+    ]
+  })
+
+  tags = {
+    Name = "eks-role"
+  }
+}
+
+resource "aws_iam_role_policy_attachment" "eks_policy" {
+  role       = aws_iam_role.eks_role.name
+  policy_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+}
+
+resource "aws_iam_role_policy_attachment" "eks_vpc_policy" {
+  role       = aws_iam_role.eks_role.name
+  policy_arn = "arn:aws:iam::aws:policy/AmazonEKSVPCResourceController"
+}
+
+
+resource "aws_security_group" "eks_nodes_sg" {
+  vpc_id = aws_vpc.main.id
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    from_port   = 443
+    to_port     = 443
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  tags = {
+    Name = "eks-nodes-sg"
+  }
+}
+
+
+
+
 resource "aws_iam_role" "ecs_task_execution_role" {
   name               = "ecsTaskExecution"
   assume_role_policy = data.aws_iam_policy_document.ecs_task_execution_assume_role.json

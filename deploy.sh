@@ -9,7 +9,7 @@ PROJECT_ROOT="${SCRIPT_DIR}"
 echo "Project root is: $PROJECT_ROOT"
 
 # Define a single ECR repository URL for all services
-ECR_REPO_URL="294417223953.dkr.ecr.us-east-1.amazonaws.com/order-system-repo"
+ECR_REPO_URL="294417223953.dkr.ecr.us-east-1.amazonaws.com"
 
 # List the service folders you want to build
 services=("order-service" "inventory-service" "payment-service")
@@ -24,7 +24,7 @@ aws ecr get-login-password --region us-east-1 | docker login --username AWS --pa
 # Loop through each service and build & push its Docker image
 for service in "${services[@]}"; do
   # Create a unique image tag per service: e.g., order-service-latest, inventory-service-latest, etc.
-  IMAGE_FULL_TAG="${ECR_REPO_URL}:${service}-${IMAGE_TAG}"
+  IMAGE_FULL_TAG="${ECR_REPO_URL}/${service}:${IMAGE_TAG}"
   
   echo "-------------------------------------------------------"
   echo "Building Docker image for $service with tag $IMAGE_FULL_TAG..."

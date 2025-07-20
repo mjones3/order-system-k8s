@@ -18,7 +18,7 @@ buildNumber.properties
 /apps/order-service/target/
 .DS_Store
 Thumbs.db
-
+apps/order-service/.mvn/*
 apps/order-service/.mvn/wrapper/maven-wrapper.properties
 apps/order-service/.mvn/wrapper/MavenWrapperDownloader.java
 apps/functions/cancel-order-handler/cancelOrderFunction.zip
@@ -51,3 +51,4 @@ orderCallbackFunction.checksum
 emailServiceFunction.checksum
 terraform/terraform.tfstate
 terraform/terraform.tfstate.backup
+apps/inventory-service/target/classes/com/elusivemel/inventoryservice/dto/InventoryResponseItem.class

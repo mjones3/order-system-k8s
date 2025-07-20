@@ -1,0 +1,34 @@
+replicaCount: 2
+
+image:
+  repository: 294417223953.dkr.ecr.us-east-1.amazonaws.com/order-service
+  tag: latest
+  pullPolicy: IfNotPresent
+  pullSecretName: my-ecr-secret
+
+service:
+  name: order-service
+  type: NodePort
+  port: 8082
+
+ingress:
+  enabled: true
+  annotations: {}
+  hosts:
+    - host: order-service.local
+      paths:
+        - /
+
+resources:
+  limits:
+    cpu: "500m"
+    memory: "512Mi"
+  requests:
+    cpu: "250m"
+    memory: "256Mi"
+
+hpa:  
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 80

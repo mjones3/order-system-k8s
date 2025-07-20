@@ -52,3 +52,13 @@ emailServiceFunction.checksum
 terraform/terraform.tfstate
 terraform/terraform.tfstate.backup
 apps/inventory-service/target/classes/com/elusivemel/inventoryservice/dto/InventoryResponseItem.class
+apps/inventory-service/target/classes/com/elusivemel/inventoryservice/InventoryServiceApplication.class
+apps/inventory-service/target/classes/com/elusivemel/inventoryservice/controller/InventoryController.class
+apps/inventory-service/target/classes/com/elusivemel/inventoryservice/dto/InventoryRequest.class
+apps/inventory-service/target/classes/com/elusivemel/inventoryservice/dto/InventoryRequestItem.class
+apps/inventory-service/target/classes/com/elusivemel/inventoryservice/dto/InventoryResponse.class
+apps/inventory-service/target/classes/com/elusivemel/inventoryservice/dto/InventoryResponseItem.class
+apps/inventory-service/target/classes/com/elusivemel/inventoryservice/model/Inventory.class
+apps/inventory-service/target/classes/com/elusivemel/inventoryservice/repository/InventoryRepository.class
+apps/inventory-service/target/classes/com/elusivemel/inventoryservice/util/InventoryUtil.class
+apps/inventory-service/target/test-classes/com/elusivemel/inventory_service/InventoryServiceApplicationTests.class

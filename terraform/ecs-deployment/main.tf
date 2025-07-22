@@ -22,7 +22,7 @@ module "network" {
   private_subnet = ["172.1.3.0/24", "172.1.4.0/24"]
   tags = {
     Environment = "dev"
-    Project     = "order-system"
+    project     = "order-system"
   }
 }
 
@@ -114,6 +114,7 @@ module "order_service_db" {
   tags = {
     Environment = "dev"
     Service     = "order-service"
+    project     = "order-system"
   }
 }
 
@@ -153,6 +154,7 @@ module "inventory_service_db" {
   tags = {
     Environment = "dev"
     Service     = "inventory-service"
+    project     = "order-system"
   }
 }
 
@@ -191,5 +193,6 @@ module "payment_service_db" {
   tags = {
     Environment = "dev"
     Service     = "payment-service"
+    project     = "order-system"
   }
 }

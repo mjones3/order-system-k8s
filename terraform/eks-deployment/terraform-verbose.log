@@ -1,0 +1,497 @@
+2025-07-20T19:36:49.564-0400 [INFO]  Terraform version: 1.11.4
+2025-07-20T19:36:49.565-0400 [DEBUG] using github.com/hashicorp/go-tfe v1.70.0
+2025-07-20T19:36:49.565-0400 [DEBUG] using github.com/hashicorp/hcl/v2 v2.23.0
+2025-07-20T19:36:49.565-0400 [DEBUG] using github.com/hashicorp/terraform-svchost v0.1.1
+2025-07-20T19:36:49.565-0400 [DEBUG] using github.com/zclconf/go-cty v1.16.0
+2025-07-20T19:36:49.565-0400 [INFO]  Go runtime version: go1.23.3
+2025-07-20T19:36:49.565-0400 [INFO]  CLI args: []string{"terraform", "init", "-no-color"}
+2025-07-20T19:36:49.565-0400 [DEBUG] Attempting to open CLI config file: /Users/mjones/.terraformrc
+2025-07-20T19:36:49.565-0400 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2025-07-20T19:36:49.565-0400 [DEBUG] ignoring non-existing provider search directory terraform.d/plugins
+2025-07-20T19:36:49.565-0400 [DEBUG] ignoring non-existing provider search directory /Users/mjones/.terraform.d/plugins
+2025-07-20T19:36:49.565-0400 [DEBUG] ignoring non-existing provider search directory /Users/mjones/Library/Application Support/io.terraform/plugins
+2025-07-20T19:36:49.565-0400 [DEBUG] ignoring non-existing provider search directory /Library/Application Support/io.terraform/plugins
+2025-07-20T19:36:49.568-0400 [INFO]  CLI command args: []string{"init", "-no-color"}
+2025-07-20T19:36:49.572-0400 [DEBUG] checking for provisioner in "."
+2025-07-20T19:36:49.607-0400 [DEBUG] checking for provisioner in "/usr/local/bin"
+2025-07-20T19:36:49.621-0400 [DEBUG] Module installer: begin api-sfn
+2025-07-20T19:36:49.631-0400 [DEBUG] Module installer: api-sfn installed at modules/api-sfn
+2025-07-20T19:36:49.631-0400 [DEBUG] Module installer: begin ecr_repo
+2025-07-20T19:36:49.632-0400 [DEBUG] Module installer: ecr_repo installed at modules/ecr_repo
+2025-07-20T19:36:49.632-0400 [DEBUG] Module installer: begin ecr_repo.ecr_repo
+2025-07-20T19:36:49.632-0400 [DEBUG] ecr_repo.ecr_repo listing available versions of registry.terraform.io/terraform-aws-modules/ecr/aws at registry.terraform.io
+2025-07-20T19:36:49.632-0400 [DEBUG] Service discovery for registry.terraform.io at https://registry.terraform.io/.well-known/terraform.json
+2025-07-20T19:36:49.797-0400 [DEBUG] fetching module versions from "https://registry.terraform.io/v1/modules/terraform-aws-modules/ecr/aws/versions"
+2025-07-20T19:36:49.798-0400 [DEBUG] GET https://registry.terraform.io/v1/modules/terraform-aws-modules/ecr/aws/versions
+2025-07-20T19:36:49.809-0400 [DEBUG] found available version "1.0.0" for terraform-aws-modules/ecr/aws
+2025-07-20T19:36:49.809-0400 [DEBUG] found available version "1.1.0" for terraform-aws-modules/ecr/aws
+2025-07-20T19:36:49.809-0400 [DEBUG] found available version "1.1.1" for terraform-aws-modules/ecr/aws
+2025-07-20T19:36:49.809-0400 [DEBUG] found available version "1.2.0" for terraform-aws-modules/ecr/aws
+2025-07-20T19:36:49.809-0400 [DEBUG] found available version "1.3.0" for terraform-aws-modules/ecr/aws
+2025-07-20T19:36:49.809-0400 [DEBUG] found available version "1.3.1" for terraform-aws-modules/ecr/aws
+2025-07-20T19:36:49.809-0400 [DEBUG] found available version "1.3.2" for terraform-aws-modules/ecr/aws
+2025-07-20T19:36:49.809-0400 [DEBUG] found available version "1.4.0" for terraform-aws-modules/ecr/aws
+2025-07-20T19:36:49.809-0400 [DEBUG] found available version "1.5.0" for terraform-aws-modules/ecr/aws
+2025-07-20T19:36:49.809-0400 [DEBUG] found available version "1.5.1" for terraform-aws-modules/ecr/aws
+2025-07-20T19:36:49.809-0400 [DEBUG] found available version "1.6.0" for terraform-aws-modules/ecr/aws
+2025-07-20T19:36:49.809-0400 [DEBUG] found available version "1.7.0" for terraform-aws-modules/ecr/aws
+2025-07-20T19:36:49.809-0400 [DEBUG] found available version "1.7.1" for terraform-aws-modules/ecr/aws
+2025-07-20T19:36:49.809-0400 [DEBUG] found available version "2.0.0" for terraform-aws-modules/ecr/aws
+2025-07-20T19:36:49.809-0400 [DEBUG] found available version "2.1.0" for terraform-aws-modules/ecr/aws
+2025-07-20T19:36:49.809-0400 [DEBUG] found available version "2.1.1" for terraform-aws-modules/ecr/aws
+2025-07-20T19:36:49.809-0400 [DEBUG] found available version "2.2.0" for terraform-aws-modules/ecr/aws
+2025-07-20T19:36:49.809-0400 [DEBUG] found available version "2.2.1" for terraform-aws-modules/ecr/aws
+2025-07-20T19:36:49.809-0400 [DEBUG] found available version "2.3.0" for terraform-aws-modules/ecr/aws
+2025-07-20T19:36:49.809-0400 [DEBUG] found available version "2.3.1" for terraform-aws-modules/ecr/aws
+2025-07-20T19:36:49.809-0400 [DEBUG] found available version "2.4.0" for terraform-aws-modules/ecr/aws
+2025-07-20T19:36:49.811-0400 [DEBUG] looking up module location from "https://registry.terraform.io/v1/modules/terraform-aws-modules/ecr/aws/2.4.0/download"
+2025-07-20T19:36:49.811-0400 [DEBUG] GET https://registry.terraform.io/v1/modules/terraform-aws-modules/ecr/aws/2.4.0/download
+2025-07-20T19:36:50.829-0400 [DEBUG] Module installer: ecr_repo.ecr_repo installed at .terraform/modules/ecr_repo.ecr_repo
+2025-07-20T19:36:50.829-0400 [DEBUG] Module installer: begin eks
+2025-07-20T19:36:50.830-0400 [DEBUG] Module installer: eks installed at modules/eks
+2025-07-20T19:36:50.830-0400 [DEBUG] Module installer: begin eks.eks
+2025-07-20T19:36:50.830-0400 [DEBUG] eks.eks listing available versions of registry.terraform.io/terraform-aws-modules/eks/aws at registry.terraform.io
+2025-07-20T19:36:50.830-0400 [DEBUG] fetching module versions from "https://registry.terraform.io/v1/modules/terraform-aws-modules/eks/aws/versions"
+2025-07-20T19:36:50.830-0400 [DEBUG] GET https://registry.terraform.io/v1/modules/terraform-aws-modules/eks/aws/versions
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "0.1.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "0.1.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "0.2.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "1.0.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "1.1.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "1.2.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "1.3.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "1.4.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "1.5.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "1.6.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "1.7.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "1.8.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "2.0.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "2.1.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "2.2.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "2.2.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "2.3.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "2.3.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "3.0.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "4.0.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "4.0.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "4.0.2" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "5.0.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "5.1.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "6.0.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "6.0.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "6.0.2" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "7.0.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "7.0.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "8.0.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "8.1.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "8.2.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "9.0.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "10.0.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "11.0.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "11.1.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "12.0.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "12.1.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "12.2.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "13.0.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "13.1.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "13.2.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "13.2.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "14.0.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "15.0.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "15.1.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "15.2.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "16.0.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "16.0.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "16.1.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "16.2.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "17.0.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "17.0.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "17.0.2" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "17.0.3" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "17.1.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "17.2.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "17.3.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "17.4.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "17.5.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "17.6.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "17.7.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "17.8.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "17.9.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "17.10.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "17.11.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "17.12.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "17.13.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "17.14.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "17.15.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "17.16.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "17.17.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "17.18.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "17.19.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "17.20.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "17.21.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "17.22.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "17.23.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "17.24.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.0.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.0.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.0.2" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.0.3" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.0.4" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.0.5" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.0.6" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.1.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.2.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.2.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.2.2" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.2.3" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.2.4" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.2.5" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.2.6" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.2.7" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.3.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.3.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.4.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.4.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.5.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.5.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.6.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.6.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.7.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.7.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.7.2" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.7.3" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.8.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.8.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.9.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.10.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.10.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.10.2" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.11.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.12.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.13.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.14.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.14.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.15.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.16.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.17.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.17.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.18.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.19.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.20.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.20.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.20.2" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.20.3" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.20.4" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.20.5" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.21.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.22.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.23.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.24.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.24.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.25.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.26.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.26.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.26.2" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.26.3" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.26.4" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.26.5" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.26.6" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.27.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.27.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.28.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.29.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.29.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.30.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.30.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.30.2" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.30.3" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.31.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.31.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "18.31.2" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "19.0.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "19.0.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "19.0.2" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "19.0.3" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "19.0.4" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "19.1.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "19.1.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "19.2.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "19.3.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "19.3.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "19.4.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "19.4.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "19.4.2" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "19.4.3" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "19.5.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "19.5.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "19.6.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "19.7.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "19.8.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "19.9.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "19.10.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "19.10.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "19.10.2" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "19.10.3" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "19.11.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "19.12.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "19.13.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "19.13.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "19.14.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "19.15.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "19.15.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "19.15.2" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "19.15.3" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "19.15.4" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "19.16.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "19.17.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "19.17.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "19.17.2" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "19.17.3" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "19.17.4" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "19.18.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "19.19.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "19.19.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "19.20.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "19.21.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.0.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.0.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.1.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.1.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.2.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.2.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.2.2" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.3.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.4.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.5.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.5.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.5.2" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.5.3" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.6.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.7.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.8.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.8.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.8.2" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.8.3" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.8.4" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.8.5" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.9.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.10.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.11.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.11.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.12.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.13.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.13.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.14.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.15.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.16.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.17.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.17.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.17.2" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.18.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.19.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.20.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.21.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.22.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.22.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.23.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.24.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.24.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.24.2" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.24.3" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.25.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.26.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.26.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.27.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.28.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.29.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.30.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.30.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.31.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.31.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.31.2" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.31.3" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.31.4" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.31.5" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.31.6" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.32.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.33.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.33.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.34.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.35.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.36.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.36.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.37.0" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.37.1" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.851-0400 [DEBUG] found available version "20.37.2" for terraform-aws-modules/eks/aws
+2025-07-20T19:36:50.852-0400 [DEBUG] looking up module location from "https://registry.terraform.io/v1/modules/terraform-aws-modules/eks/aws/20.37.2/download"
+2025-07-20T19:36:50.852-0400 [DEBUG] GET https://registry.terraform.io/v1/modules/terraform-aws-modules/eks/aws/20.37.2/download
+2025-07-20T19:36:51.938-0400 [DEBUG] Module installer: eks.eks installed at .terraform/modules/eks.eks
+2025-07-20T19:36:51.938-0400 [DEBUG] Module installer: begin eks.eks.eks_managed_node_group
+2025-07-20T19:36:51.944-0400 [DEBUG] Module installer: eks.eks.eks_managed_node_group installed at .terraform/modules/eks.eks/modules/eks-managed-node-group
+2025-07-20T19:36:51.944-0400 [DEBUG] Module installer: begin eks.eks.eks_managed_node_group.user_data
+2025-07-20T19:36:51.947-0400 [DEBUG] Module installer: eks.eks.eks_managed_node_group.user_data installed at .terraform/modules/eks.eks/modules/_user_data
+2025-07-20T19:36:51.947-0400 [DEBUG] Module installer: begin eks.eks.fargate_profile
+2025-07-20T19:36:51.956-0400 [DEBUG] Module installer: eks.eks.fargate_profile installed at .terraform/modules/eks.eks/modules/fargate-profile
+2025-07-20T19:36:51.956-0400 [DEBUG] Module installer: begin eks.eks.kms
+2025-07-20T19:36:51.956-0400 [DEBUG] eks.eks.kms listing available versions of registry.terraform.io/terraform-aws-modules/kms/aws at registry.terraform.io
+2025-07-20T19:36:51.956-0400 [DEBUG] fetching module versions from "https://registry.terraform.io/v1/modules/terraform-aws-modules/kms/aws/versions"
+2025-07-20T19:36:51.956-0400 [DEBUG] GET https://registry.terraform.io/v1/modules/terraform-aws-modules/kms/aws/versions
+2025-07-20T19:36:51.967-0400 [DEBUG] found available version "1.0.0" for terraform-aws-modules/kms/aws
+2025-07-20T19:36:51.967-0400 [DEBUG] found available version "1.0.1" for terraform-aws-modules/kms/aws
+2025-07-20T19:36:51.967-0400 [DEBUG] found available version "1.0.2" for terraform-aws-modules/kms/aws
+2025-07-20T19:36:51.967-0400 [DEBUG] found available version "1.0.3" for terraform-aws-modules/kms/aws
+2025-07-20T19:36:51.967-0400 [DEBUG] found available version "1.1.0" for terraform-aws-modules/kms/aws
+2025-07-20T19:36:51.967-0400 [DEBUG] found available version "1.2.0" for terraform-aws-modules/kms/aws
+2025-07-20T19:36:51.967-0400 [DEBUG] found available version "1.2.1" for terraform-aws-modules/kms/aws
+2025-07-20T19:36:51.967-0400 [DEBUG] found available version "1.2.2" for terraform-aws-modules/kms/aws
+2025-07-20T19:36:51.967-0400 [DEBUG] found available version "1.3.0" for terraform-aws-modules/kms/aws
+2025-07-20T19:36:51.967-0400 [DEBUG] found available version "1.3.1" for terraform-aws-modules/kms/aws
+2025-07-20T19:36:51.967-0400 [DEBUG] found available version "1.4.0" for terraform-aws-modules/kms/aws
+2025-07-20T19:36:51.967-0400 [DEBUG] found available version "1.5.0" for terraform-aws-modules/kms/aws
+2025-07-20T19:36:51.967-0400 [DEBUG] found available version "2.0.0" for terraform-aws-modules/kms/aws
+2025-07-20T19:36:51.967-0400 [DEBUG] found available version "2.0.1" for terraform-aws-modules/kms/aws
+2025-07-20T19:36:51.967-0400 [DEBUG] found available version "2.1.0" for terraform-aws-modules/kms/aws
+2025-07-20T19:36:51.967-0400 [DEBUG] found available version "2.2.0" for terraform-aws-modules/kms/aws
+2025-07-20T19:36:51.967-0400 [DEBUG] found available version "2.2.1" for terraform-aws-modules/kms/aws
+2025-07-20T19:36:51.967-0400 [DEBUG] found available version "3.0.0" for terraform-aws-modules/kms/aws
+2025-07-20T19:36:51.967-0400 [DEBUG] found available version "3.1.0" for terraform-aws-modules/kms/aws
+2025-07-20T19:36:51.967-0400 [DEBUG] found available version "3.1.1" for terraform-aws-modules/kms/aws
+2025-07-20T19:36:51.967-0400 [DEBUG] found available version "4.0.0" for terraform-aws-modules/kms/aws
+2025-07-20T19:36:51.968-0400 [DEBUG] looking up module location from "https://registry.terraform.io/v1/modules/terraform-aws-modules/kms/aws/2.1.0/download"
+2025-07-20T19:36:51.968-0400 [DEBUG] GET https://registry.terraform.io/v1/modules/terraform-aws-modules/kms/aws/2.1.0/download
+2025-07-20T19:36:52.588-0400 [DEBUG] Module installer: eks.eks.kms installed at .terraform/modules/eks.eks.kms
+2025-07-20T19:36:52.588-0400 [DEBUG] Module installer: begin eks.eks.self_managed_node_group
+2025-07-20T19:36:52.598-0400 [DEBUG] Module installer: eks.eks.self_managed_node_group installed at .terraform/modules/eks.eks/modules/self-managed-node-group
+2025-07-20T19:36:52.598-0400 [DEBUG] Module installer: begin eks.eks.self_managed_node_group.user_data
+2025-07-20T19:36:52.598-0400 [DEBUG] Module installer: eks.eks.self_managed_node_group.user_data installed at .terraform/modules/eks.eks/modules/_user_data
+2025-07-20T19:36:52.598-0400 [DEBUG] Module installer: begin eks_inventory_service
+2025-07-20T19:36:52.600-0400 [DEBUG] Module installer: eks_inventory_service installed at modules/eks-services/inventory-service
+2025-07-20T19:36:52.600-0400 [DEBUG] Module installer: begin eks_order_service
+2025-07-20T19:36:52.601-0400 [DEBUG] Module installer: eks_order_service installed at modules/eks-services/order-service
+2025-07-20T19:36:52.601-0400 [DEBUG] Module installer: begin eks_payment_service
+2025-07-20T19:36:52.602-0400 [DEBUG] Module installer: eks_payment_service installed at modules/eks-services/payment-service
+2025-07-20T19:36:52.602-0400 [DEBUG] Module installer: begin iam
+2025-07-20T19:36:52.603-0400 [DEBUG] Module installer: iam installed at modules/iam
+2025-07-20T19:36:52.603-0400 [DEBUG] Module installer: begin inventory_service_db
+2025-07-20T19:36:52.604-0400 [DEBUG] Module installer: inventory_service_db installed at modules/services/inventory_service/db
+2025-07-20T19:36:52.604-0400 [DEBUG] Module installer: begin lambda
+2025-07-20T19:36:52.605-0400 [DEBUG] Module installer: lambda installed at modules/lambda
+2025-07-20T19:36:52.605-0400 [DEBUG] Module installer: begin network
+2025-07-20T19:36:52.606-0400 [DEBUG] Module installer: network installed at modules/network
+2025-07-20T19:36:52.606-0400 [DEBUG] Module installer: begin order_service_db
+2025-07-20T19:36:52.607-0400 [DEBUG] Module installer: order_service_db installed at modules/services/order_service/db
+2025-07-20T19:36:52.607-0400 [DEBUG] Module installer: begin payment_service_db
+2025-07-20T19:36:52.608-0400 [DEBUG] Module installer: payment_service_db installed at modules/services/payment_service/db
+2025-07-20T19:36:52.626-0400 [DEBUG] GET https://registry.terraform.io/v1/providers/hashicorp/aws/versions
+2025-07-20T19:36:52.665-0400 [DEBUG] GET https://registry.terraform.io/v1/providers/hashicorp/kubernetes/versions
+2025-07-20T19:36:52.698-0400 [DEBUG] GET https://registry.terraform.io/v1/providers/hashicorp/time/versions
+2025-07-20T19:36:52.736-0400 [DEBUG] GET https://registry.terraform.io/v1/providers/hashicorp/tls/versions
+2025-07-20T19:36:52.768-0400 [DEBUG] GET https://registry.terraform.io/v1/providers/hashicorp/cloudinit/versions
+2025-07-20T19:36:52.802-0400 [DEBUG] GET https://registry.terraform.io/v1/providers/hashicorp/null/versions
+2025-07-20T19:36:52.837-0400 [DEBUG] GET https://registry.terraform.io/v1/providers/hashicorp/null/3.2.4/download/darwin/amd64
+2025-07-20T19:36:52.872-0400 [DEBUG] GET https://releases.hashicorp.com/terraform-provider-null/3.2.4/terraform-provider-null_3.2.4_SHA256SUMS
+2025-07-20T19:36:52.992-0400 [DEBUG] GET https://releases.hashicorp.com/terraform-provider-null/3.2.4/terraform-provider-null_3.2.4_SHA256SUMS.72D7468F.sig
+2025-07-20T19:36:53.232-0400 [DEBUG] Provider signed by 34365D9472D7468F HashiCorp Security (hashicorp.com/security) <security@hashicorp.com>
+2025-07-20T19:36:53.391-0400 [DEBUG] GET https://registry.terraform.io/v1/providers/hashicorp/aws/5.100.0/download/darwin/amd64
+2025-07-20T19:36:53.431-0400 [DEBUG] GET https://releases.hashicorp.com/terraform-provider-aws/5.100.0/terraform-provider-aws_5.100.0_SHA256SUMS
+2025-07-20T19:36:53.464-0400 [DEBUG] GET https://releases.hashicorp.com/terraform-provider-aws/5.100.0/terraform-provider-aws_5.100.0_SHA256SUMS.72D7468F.sig
+2025-07-20T19:36:58.194-0400 [DEBUG] Provider signed by 34365D9472D7468F HashiCorp Security (hashicorp.com/security) <security@hashicorp.com>
+2025-07-20T19:37:02.931-0400 [DEBUG] GET https://registry.terraform.io/v1/providers/hashicorp/kubernetes/2.37.1/download/darwin/amd64
+2025-07-20T19:37:02.969-0400 [DEBUG] GET https://releases.hashicorp.com/terraform-provider-kubernetes/2.37.1/terraform-provider-kubernetes_2.37.1_SHA256SUMS
+2025-07-20T19:37:02.998-0400 [DEBUG] GET https://releases.hashicorp.com/terraform-provider-kubernetes/2.37.1/terraform-provider-kubernetes_2.37.1_SHA256SUMS.72D7468F.sig
+2025-07-20T19:37:03.785-0400 [DEBUG] Provider signed by 34365D9472D7468F HashiCorp Security (hashicorp.com/security) <security@hashicorp.com>
+2025-07-20T19:37:04.253-0400 [DEBUG] GET https://registry.terraform.io/v1/providers/hashicorp/time/0.13.1/download/darwin/amd64
+2025-07-20T19:37:04.285-0400 [DEBUG] GET https://releases.hashicorp.com/terraform-provider-time/0.13.1/terraform-provider-time_0.13.1_SHA256SUMS
+2025-07-20T19:37:04.314-0400 [DEBUG] GET https://releases.hashicorp.com/terraform-provider-time/0.13.1/terraform-provider-time_0.13.1_SHA256SUMS.72D7468F.sig
+2025-07-20T19:37:04.547-0400 [DEBUG] Provider signed by 34365D9472D7468F HashiCorp Security (hashicorp.com/security) <security@hashicorp.com>
+2025-07-20T19:37:04.698-0400 [DEBUG] GET https://registry.terraform.io/v1/providers/hashicorp/tls/4.1.0/download/darwin/amd64
+2025-07-20T19:37:04.733-0400 [DEBUG] GET https://releases.hashicorp.com/terraform-provider-tls/4.1.0/terraform-provider-tls_4.1.0_SHA256SUMS
+2025-07-20T19:37:04.763-0400 [DEBUG] GET https://releases.hashicorp.com/terraform-provider-tls/4.1.0/terraform-provider-tls_4.1.0_SHA256SUMS.72D7468F.sig
+2025-07-20T19:37:05.005-0400 [DEBUG] Provider signed by 34365D9472D7468F HashiCorp Security (hashicorp.com/security) <security@hashicorp.com>
+2025-07-20T19:37:05.174-0400 [DEBUG] GET https://registry.terraform.io/v1/providers/hashicorp/cloudinit/2.3.7/download/darwin/amd64
+2025-07-20T19:37:05.211-0400 [DEBUG] GET https://releases.hashicorp.com/terraform-provider-cloudinit/2.3.7/terraform-provider-cloudinit_2.3.7_SHA256SUMS
+2025-07-20T19:37:05.238-0400 [DEBUG] GET https://releases.hashicorp.com/terraform-provider-cloudinit/2.3.7/terraform-provider-cloudinit_2.3.7_SHA256SUMS.72D7468F.sig
+2025-07-20T19:37:05.472-0400 [DEBUG] Provider signed by 34365D9472D7468F HashiCorp Security (hashicorp.com/security) <security@hashicorp.com>
+2025-07-20T19:37:05.755-0400 [INFO]  Terraform version: 1.11.4
+2025-07-20T19:37:05.756-0400 [DEBUG] using github.com/hashicorp/go-tfe v1.70.0
+2025-07-20T19:37:05.756-0400 [DEBUG] using github.com/hashicorp/hcl/v2 v2.23.0
+2025-07-20T19:37:05.756-0400 [DEBUG] using github.com/hashicorp/terraform-svchost v0.1.1
+2025-07-20T19:37:05.756-0400 [DEBUG] using github.com/zclconf/go-cty v1.16.0
+2025-07-20T19:37:05.756-0400 [INFO]  Go runtime version: go1.23.3
+2025-07-20T19:37:05.756-0400 [INFO]  CLI args: []string{"terraform", "plan", "-var-file=terraform.tfvars", "-out=eks.tfplan", "-no-color"}
+2025-07-20T19:37:05.756-0400 [DEBUG] Attempting to open CLI config file: /Users/mjones/.terraformrc
+2025-07-20T19:37:05.756-0400 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2025-07-20T19:37:05.756-0400 [DEBUG] ignoring non-existing provider search directory terraform.d/plugins
+2025-07-20T19:37:05.756-0400 [DEBUG] ignoring non-existing provider search directory /Users/mjones/.terraform.d/plugins
+2025-07-20T19:37:05.756-0400 [DEBUG] ignoring non-existing provider search directory /Users/mjones/Library/Application Support/io.terraform/plugins
+2025-07-20T19:37:05.756-0400 [DEBUG] ignoring non-existing provider search directory /Library/Application Support/io.terraform/plugins
+2025-07-20T19:37:05.759-0400 [INFO]  CLI command args: []string{"plan", "-var-file=terraform.tfvars", "-out=eks.tfplan", "-no-color"}
+2025-07-20T19:37:08.461-0400 [DEBUG] checking for provisioner in "."
+2025-07-20T19:37:08.464-0400 [DEBUG] checking for provisioner in "/usr/local/bin"
+2025-07-20T19:37:08.482-0400 [INFO]  backend/local: starting Plan operation
+2025-07-20T19:37:08.573-0400 [DEBUG] created provider logger: level=debug
+2025-07-20T19:37:08.573-0400 [INFO]  provider: configuring client automatic mTLS
+2025-07-20T19:37:08.601-0400 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/hashicorp/aws/5.100.0/darwin_amd64/terraform-provider-aws_v5.100.0_x5 args=[".terraform/providers/registry.terraform.io/hashicorp/aws/5.100.0/darwin_amd64/terraform-provider-aws_v5.100.0_x5"]
+2025-07-20T19:37:08.621-0400 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/hashicorp/aws/5.100.0/darwin_amd64/terraform-provider-aws_v5.100.0_x5 pid=2720
+2025-07-20T19:37:08.622-0400 [DEBUG] provider: waiting for RPC address: plugin=.terraform/providers/registry.terraform.io/hashicorp/aws/5.100.0/darwin_amd64/terraform-provider-aws_v5.100.0_x5
+2025-07-20T19:38:08.627-0400 [ERROR] provider: plugin process exited: plugin=.terraform/providers/registry.terraform.io/hashicorp/aws/5.100.0/darwin_amd64/terraform-provider-aws_v5.100.0_x5 id=2720 error="signal: killed"
+2025-07-20T19:38:08.627-0400 [DEBUG] created provider logger: level=debug
+2025-07-20T19:38:08.629-0400 [INFO]  provider: configuring client automatic mTLS
+2025-07-20T19:38:08.634-0400 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/hashicorp/cloudinit/2.3.7/darwin_amd64/terraform-provider-cloudinit_v2.3.7_x5 args=[".terraform/providers/registry.terraform.io/hashicorp/cloudinit/2.3.7/darwin_amd64/terraform-provider-cloudinit_v2.3.7_x5"]
+2025-07-20T19:38:08.644-0400 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/hashicorp/cloudinit/2.3.7/darwin_amd64/terraform-provider-cloudinit_v2.3.7_x5 pid=2780
+2025-07-20T19:38:08.644-0400 [DEBUG] provider: waiting for RPC address: plugin=.terraform/providers/registry.terraform.io/hashicorp/cloudinit/2.3.7/darwin_amd64/terraform-provider-cloudinit_v2.3.7_x5
+2025-07-20T19:38:09.735-0400 [INFO]  provider.terraform-provider-cloudinit_v2.3.7_x5: configuring server automatic mTLS: timestamp=2025-07-20T19:38:09.733-0400
+2025-07-20T19:38:09.762-0400 [DEBUG] provider.terraform-provider-cloudinit_v2.3.7_x5: plugin address: address=/var/folders/jw/mq7y8yy121l5z6vq207_b4sw0000gn/T/plugin3037679142 network=unix timestamp=2025-07-20T19:38:09.762-0400
+2025-07-20T19:38:09.763-0400 [DEBUG] provider: using plugin: version=5
+2025-07-20T19:38:09.819-0400 [DEBUG] No provider meta schema returned
+2025-07-20T19:38:09.826-0400 [DEBUG] provider.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = error reading from server: EOF"
+2025-07-20T19:38:09.827-0400 [INFO]  provider: plugin process exited: plugin=.terraform/providers/registry.terraform.io/hashicorp/cloudinit/2.3.7/darwin_amd64/terraform-provider-cloudinit_v2.3.7_x5 id=2780
+2025-07-20T19:38:09.829-0400 [DEBUG] provider: plugin exited
+2025-07-20T19:38:09.830-0400 [DEBUG] created provider logger: level=debug
+2025-07-20T19:38:09.830-0400 [INFO]  provider: configuring client automatic mTLS
+2025-07-20T19:38:09.837-0400 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/hashicorp/kubernetes/2.37.1/darwin_amd64/terraform-provider-kubernetes_v2.37.1_x5 args=[".terraform/providers/registry.terraform.io/hashicorp/kubernetes/2.37.1/darwin_amd64/terraform-provider-kubernetes_v2.37.1_x5"]
+2025-07-20T19:38:09.855-0400 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/hashicorp/kubernetes/2.37.1/darwin_amd64/terraform-provider-kubernetes_v2.37.1_x5 pid=2785
+2025-07-20T19:38:09.855-0400 [DEBUG] provider: waiting for RPC address: plugin=.terraform/providers/registry.terraform.io/hashicorp/kubernetes/2.37.1/darwin_amd64/terraform-provider-kubernetes_v2.37.1_x5
+2025-07-20T19:38:12.567-0400 [INFO]  provider.terraform-provider-kubernetes_v2.37.1_x5: configuring server automatic mTLS: timestamp=2025-07-20T19:38:12.567-0400
+2025-07-20T19:38:12.597-0400 [DEBUG] provider.terraform-provider-kubernetes_v2.37.1_x5: plugin address: address=/var/folders/jw/mq7y8yy121l5z6vq207_b4sw0000gn/T/plugin2157545332 network=unix timestamp=2025-07-20T19:38:12.597-0400
+2025-07-20T19:38:12.598-0400 [DEBUG] provider: using plugin: version=5
+2025-07-20T19:38:12.706-0400 [DEBUG] provider.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = error reading from server: EOF"
+2025-07-20T19:38:12.711-0400 [INFO]  provider: plugin process exited: plugin=.terraform/providers/registry.terraform.io/hashicorp/kubernetes/2.37.1/darwin_amd64/terraform-provider-kubernetes_v2.37.1_x5 id=2785
+2025-07-20T19:38:12.711-0400 [DEBUG] provider: plugin exited
+2025-07-20T19:38:12.712-0400 [DEBUG] created provider logger: level=debug
+2025-07-20T19:38:12.712-0400 [INFO]  provider: configuring client automatic mTLS
+2025-07-20T19:38:12.717-0400 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/hashicorp/null/3.2.4/darwin_amd64/terraform-provider-null_v3.2.4_x5 args=[".terraform/providers/registry.terraform.io/hashicorp/null/3.2.4/darwin_amd64/terraform-provider-null_v3.2.4_x5"]
+2025-07-20T19:38:12.727-0400 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/hashicorp/null/3.2.4/darwin_amd64/terraform-provider-null_v3.2.4_x5 pid=2788
+2025-07-20T19:38:12.727-0400 [DEBUG] provider: waiting for RPC address: plugin=.terraform/providers/registry.terraform.io/hashicorp/null/3.2.4/darwin_amd64/terraform-provider-null_v3.2.4_x5
+2025-07-20T19:38:13.741-0400 [INFO]  provider.terraform-provider-null_v3.2.4_x5: configuring server automatic mTLS: timestamp=2025-07-20T19:38:13.740-0400
+2025-07-20T19:38:13.770-0400 [DEBUG] provider.terraform-provider-null_v3.2.4_x5: plugin address: address=/var/folders/jw/mq7y8yy121l5z6vq207_b4sw0000gn/T/plugin2229222802 network=unix timestamp=2025-07-20T19:38:13.770-0400
+2025-07-20T19:38:13.770-0400 [DEBUG] provider: using plugin: version=5
+2025-07-20T19:38:13.800-0400 [DEBUG] No provider meta schema returned
+2025-07-20T19:38:13.802-0400 [DEBUG] provider.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = error reading from server: EOF"
+2025-07-20T19:38:13.806-0400 [INFO]  provider: plugin process exited: plugin=.terraform/providers/registry.terraform.io/hashicorp/null/3.2.4/darwin_amd64/terraform-provider-null_v3.2.4_x5 id=2788
+2025-07-20T19:38:13.806-0400 [DEBUG] provider: plugin exited
+2025-07-20T19:38:13.806-0400 [DEBUG] created provider logger: level=debug
+2025-07-20T19:38:13.806-0400 [INFO]  provider: configuring client automatic mTLS
+2025-07-20T19:38:13.810-0400 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/hashicorp/time/0.13.1/darwin_amd64/terraform-provider-time_v0.13.1_x5 args=[".terraform/providers/registry.terraform.io/hashicorp/time/0.13.1/darwin_amd64/terraform-provider-time_v0.13.1_x5"]
+2025-07-20T19:38:13.824-0400 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/hashicorp/time/0.13.1/darwin_amd64/terraform-provider-time_v0.13.1_x5 pid=2791
+2025-07-20T19:38:13.824-0400 [DEBUG] provider: waiting for RPC address: plugin=.terraform/providers/registry.terraform.io/hashicorp/time/0.13.1/darwin_amd64/terraform-provider-time_v0.13.1_x5
+2025-07-20T19:38:14.862-0400 [INFO]  provider.terraform-provider-time_v0.13.1_x5: configuring server automatic mTLS: timestamp=2025-07-20T19:38:14.862-0400
+2025-07-20T19:38:14.891-0400 [DEBUG] provider.terraform-provider-time_v0.13.1_x5: plugin address: address=/var/folders/jw/mq7y8yy121l5z6vq207_b4sw0000gn/T/plugin1937477994 network=unix timestamp=2025-07-20T19:38:14.891-0400
+2025-07-20T19:38:14.892-0400 [DEBUG] provider: using plugin: version=5
+2025-07-20T19:38:14.924-0400 [DEBUG] No provider meta schema returned
+2025-07-20T19:38:14.927-0400 [DEBUG] provider.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = error reading from server: EOF"
+2025-07-20T19:38:14.931-0400 [INFO]  provider: plugin process exited: plugin=.terraform/providers/registry.terraform.io/hashicorp/time/0.13.1/darwin_amd64/terraform-provider-time_v0.13.1_x5 id=2791
+2025-07-20T19:38:14.931-0400 [DEBUG] provider: plugin exited
+2025-07-20T19:38:14.931-0400 [DEBUG] created provider logger: level=debug
+2025-07-20T19:38:14.931-0400 [INFO]  provider: configuring client automatic mTLS
+2025-07-20T19:38:14.935-0400 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/hashicorp/tls/4.1.0/darwin_amd64/terraform-provider-tls_v4.1.0_x5 args=[".terraform/providers/registry.terraform.io/hashicorp/tls/4.1.0/darwin_amd64/terraform-provider-tls_v4.1.0_x5"]
+2025-07-20T19:38:14.944-0400 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/hashicorp/tls/4.1.0/darwin_amd64/terraform-provider-tls_v4.1.0_x5 pid=2795
+2025-07-20T19:38:14.944-0400 [DEBUG] provider: waiting for RPC address: plugin=.terraform/providers/registry.terraform.io/hashicorp/tls/4.1.0/darwin_amd64/terraform-provider-tls_v4.1.0_x5
+2025-07-20T19:38:16.106-0400 [INFO]  provider.terraform-provider-tls_v4.1.0_x5: configuring server automatic mTLS: timestamp=2025-07-20T19:38:16.106-0400
+2025-07-20T19:38:16.135-0400 [DEBUG] provider.terraform-provider-tls_v4.1.0_x5: plugin address: address=/var/folders/jw/mq7y8yy121l5z6vq207_b4sw0000gn/T/plugin1619711199 network=unix timestamp=2025-07-20T19:38:16.135-0400
+2025-07-20T19:38:16.135-0400 [DEBUG] provider: using plugin: version=5
+2025-07-20T19:38:16.174-0400 [DEBUG] No provider meta schema returned
+2025-07-20T19:38:16.182-0400 [DEBUG] provider.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = error reading from server: EOF"
+2025-07-20T19:38:16.186-0400 [INFO]  provider: plugin process exited: plugin=.terraform/providers/registry.terraform.io/hashicorp/tls/4.1.0/darwin_amd64/terraform-provider-tls_v4.1.0_x5 id=2795
+2025-07-20T19:38:16.186-0400 [DEBUG] provider: plugin exited
+2025-07-20T19:38:16.188-0400 [WARN]  provider: plugin failed to exit gracefully

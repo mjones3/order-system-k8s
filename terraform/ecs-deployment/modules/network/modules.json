@@ -1,0 +1,9 @@
+{
+    "Modules": [
+      {
+        "Key": "network",
+        "Source": "./modules/network",
+        "Dir": "."
+      }
+    ]
+  }

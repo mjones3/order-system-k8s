@@ -6,7 +6,7 @@ resource "aws_vpc" "this" {
   cidr_block = var.vpc_cidr
   tags = {
     Environment = "dev"
-    Project     = "order-system"
+    project     = "order-system"
   }
 }
 
@@ -21,7 +21,7 @@ resource "aws_subnet" "public" {
 
   tags = {
     Environment = "dev"
-    Project     = "order-system"
+    project     = "order-system"
   }
 }
 
@@ -36,7 +36,7 @@ resource "aws_route_table" "public" {
 
   tags = {
     Environment = "dev"
-    Project     = "order-system"
+    project     = "order-system"
   }
 }
 
@@ -44,7 +44,7 @@ resource "aws_internet_gateway" "this" {
   vpc_id = aws_vpc.this.id
   tags = {
     Environment = "dev"
-    Project     = "order-system"
+    project     = "order-system"
   }
 }
 
@@ -60,7 +60,7 @@ resource "aws_nat_gateway" "nat" {
 
   tags = {
     Environment = "dev"
-    Project     = "order-system"
+    project     = "order-system"
   }
 }
 
@@ -75,7 +75,7 @@ resource "aws_route_table" "private_rt" {
   }
   tags = {
     Environment = "dev"
-    Project     = "order-system"
+    project     = "order-system"
   }
 }
 
@@ -107,7 +107,7 @@ resource "aws_subnet" "private" {
 
   tags = {
     Environment = "dev"
-    Project     = "order-system"
+    project     = "order-system"
   }
 }
 
@@ -117,7 +117,7 @@ resource "aws_db_subnet_group" "order_db_subnet_group" {
   subnet_ids = aws_subnet.private[*].id # List of subnet IDs in your VPC that you want to use for your DB
   tags = {
     Environment = "dev"
-    Project     = "order-system"
+    project     = "order-system"
   }
 }
 
@@ -126,7 +126,7 @@ resource "aws_db_subnet_group" "inventory_db_subnet_group" {
   subnet_ids = aws_subnet.private[*].id # List of subnet IDs in your VPC that you want to use for your DB
   tags = {
     Environment = "dev"
-    Project     = "order-system"
+    project     = "order-system"
   }
 }
 
@@ -153,7 +153,7 @@ resource "aws_security_group" "postgresql-sg" {
 
   tags = {
     Environment = "dev"
-    Project     = "order-system"
+    project     = "order-system"
   }
 }
 
@@ -181,7 +181,7 @@ resource "aws_security_group" "fargate_sg" {
 
   tags = {
     Environment = "dev"
-    Project     = "order-system"
+    project     = "order-system"
   }
 }
 
@@ -212,7 +212,7 @@ resource "aws_security_group" "vpc_endpoint_sg" {
 
   tags = {
     Environment = "dev"
-    Project     = "order-system"
+    project     = "order-system"
   }
 }
 

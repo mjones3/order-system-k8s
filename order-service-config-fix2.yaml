@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: order-service-config
+  namespace: order-service
+data:
+  DATASOURCE_PORT: "5432"
+  DATASOURCE_URL: "jdbc:postgresql://terraform-20250721141508796600000003.cmw3e40chj7r.us-east-1.rds.amazonaws.com:5432/orderdb"
+  ENVIRONMENT: "production"
+  PG_HOST: "terraform-20250721141508796600000003.cmw3e40chj7r.us-east-1.rds.amazonaws.com"
+  PG_DB: "orderdb"
+  PG_USER: "orderuser"
+  PG_PASS: "orderpass"
+  PG_PORT: "5432"
+  SPRING_DATASOURCE_URL: "jdbc:postgresql://terraform-20250721141508796600000003.cmw3e40chj7r.us-east-1.rds.amazonaws.com:5432/orderdb"
+  SPRING_DATASOURCE_USERNAME: "orderuser"
+  SPRING_DATASOURCE_PASSWORD: "orderpass"

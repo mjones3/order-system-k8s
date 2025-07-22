@@ -1,0 +1,57 @@
+apiVersion: skaffold/v4beta13
+kind: Config
+metadata:
+  name: order-system-kubernetes-s3
+build:
+  artifacts:
+    - image: 294417223953.dkr.ecr.us-east-1.amazonaws.com/inventory-service
+      context: apps/inventory-service
+      docker:
+        dockerfile: Dockerfile
+    - image: 294417223953.dkr.ecr.us-east-1.amazonaws.com/order-service
+      context: apps/order-service
+      docker:
+        dockerfile: Dockerfile
+    - image: 294417223953.dkr.ecr.us-east-1.amazonaws.com/payment-service
+      context: apps/payment-service
+      docker:
+        dockerfile: Dockerfile
+deploy:
+  helm:
+    releases:
+      - name: order-service
+        remoteChart: order-system/order-system
+        repo: https://mjones3-order-system-helm-chart-repo.s3.amazonaws.com
+        valuesFiles:
+          - helm/order-service/values.yaml
+        setValues:
+          image.repository: "294417223953.dkr.ecr.us-east-1.amazonaws.com/order-service"
+          image.tag: "latest"
+          env.DATASOURCE_URL: "jdbc:postgresql://postgres-orderdb:5432/orderdb"
+          env.DATASOURCE_PORT: "5432"
+          env.ENVIRONMENT: "localhost"
+        version: 0.1.0
+      - name: inventory-service
+        remoteChart: order-system/order-system
+        repo: https://mjones3-order-system-helm-chart-repo.s3.amazonaws.com
+        valuesFiles:
+          - helm/inventory-service/values.yaml
+        setValues:
+          image.repository: "294417223953.dkr.ecr.us-east-1.amazonaws.com/inventory-service"
+          image.tag: "latest"
+          env.DATASOURCE_URL: "jdbc:postgresql://postgres-inventorydb:5432/inventorydb"
+          env.DATASOURCE_PORT: "5432"
+          env.ENVIRONMENT: "localhost"
+        version: 0.1.0
+      - name: payment-service
+        remoteChart: order-system/order-system
+        repo: https://mjones3-order-system-helm-chart-repo.s3.amazonaws.com
+        valuesFiles:
+          - helm/payment-service/values.yaml
+        setValues:
+          image.repository: "294417223953.dkr.ecr.us-east-1.amazonaws.com/payment-service"
+          image.tag: "latest"
+          env.DATASOURCE_URL: "jdbc:postgresql://postgres-paymentdb:5432/paymentdb"
+          env.DATASOURCE_PORT: "5432"
+          env.ENVIRONMENT: "localhost"
+        version: 0.1.0

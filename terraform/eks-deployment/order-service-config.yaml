@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: order-service-config
+  namespace: order-service
+data:
+  PG_CONTAINER: "postgres-orderdb"
+  DATASOURCE_PORT: "5432"
+  ENVIRONMENT: "production"
+  PG_DB: "orderdb"
+  PG_USER: "orderuser"
+  PG_PASS: "orderpass"
+  PG_PORT: "5432"
+  DATASOURCE_URL: "jdbc:postgresql://order-db.cluster-xyz.us-east-1.rds.amazonaws.com:5432/orderdb"

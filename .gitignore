@@ -62,3 +62,4 @@ apps/inventory-service/target/classes/com/elusivemel/inventoryservice/model/Inve
 apps/inventory-service/target/classes/com/elusivemel/inventoryservice/repository/InventoryRepository.class
 apps/inventory-service/target/classes/com/elusivemel/inventoryservice/util/InventoryUtil.class
 apps/inventory-service/target/test-classes/com/elusivemel/inventory_service/InventoryServiceApplicationTests.class
+terraform/eks-deployment/.terraform.lock.hcl

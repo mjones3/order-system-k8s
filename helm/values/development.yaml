@@ -1,0 +1,63 @@
+# Development values for all services
+global:
+  environment: development
+
+# Order Service
+orderService:
+  replicaCount: 1
+  image:
+    repository: 294417223953.dkr.ecr.us-east-1.amazonaws.com/order-service
+    tag: "latest"
+  resources:
+    limits:
+      cpu: "500m"
+      memory: "512Mi"
+    requests:
+      cpu: "250m"
+      memory: "256Mi"
+  hpa:
+    enabled: false
+  database:
+    host: "postgres-orderdb"
+    name: "orderdb"
+    user: "orderuser"
+
+# Inventory Service
+inventoryService:
+  replicaCount: 1
+  image:
+    repository: 294417223953.dkr.ecr.us-east-1.amazonaws.com/inventory-service
+    tag: "latest"
+  resources:
+    limits:
+      cpu: "500m"
+      memory: "512Mi"
+    requests:
+      cpu: "250m"
+      memory: "256Mi"
+  hpa:
+    enabled: false
+  database:
+    host: "postgres-inventorydb"
+    name: "inventorydb"
+    user: "inventoryuser"
+
+# Payment Service
+paymentService:
+  replicaCount: 1
+  image:
+    repository: 294417223953.dkr.ecr.us-east-1.amazonaws.com/payment-service
+    tag: "latest"
+  resources:
+    limits:
+      cpu: "500m"
+      memory: "512Mi"
+    requests:
+      cpu: "250m"
+      memory: "256Mi"
+  hpa:
+    enabled: false
+  database:
+    host: "postgres-paymentdb"
+    name: "paymentdb"
+    user: "paymentuser"

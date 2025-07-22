@@ -1,0 +1,5 @@
+{
+  "DBParameterGroupName": "order-service-param-group",
+  "DBParameterGroupFamily": "postgres17",
+  "Description": "Parameter group for order service database"
+}

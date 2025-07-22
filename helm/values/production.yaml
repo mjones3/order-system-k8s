@@ -1,0 +1,72 @@
+# Production values for all services
+global:
+  environment: production
+
+# Order Service
+orderService:
+  replicaCount: 3
+  image:
+    repository: 294417223953.dkr.ecr.us-east-1.amazonaws.com/order-service
+    tag: "stable"
+  resources:
+    limits:
+      cpu: "1000m"
+      memory: "1Gi"
+    requests:
+      cpu: "500m"
+      memory: "512Mi"
+  hpa:
+    enabled: true
+    minReplicas: 3
+    maxReplicas: 10
+    targetCPUUtilizationPercentage: 70
+  database:
+    host: "order-db.cluster-xyz.us-east-1.rds.amazonaws.com"
+    name: "orderdb"
+    user: "orderuser"
+
+# Inventory Service
+inventoryService:
+  replicaCount: 3
+  image:
+    repository: 294417223953.dkr.ecr.us-east-1.amazonaws.com/inventory-service
+    tag: "stable"
+  resources:
+    limits:
+      cpu: "1000m"
+      memory: "1Gi"
+    requests:
+      cpu: "500m"
+      memory: "512Mi"
+  hpa:
+    enabled: true
+    minReplicas: 3
+    maxReplicas: 10
+    targetCPUUtilizationPercentage: 70
+  database:
+    host: "inventory-db.cluster-xyz.us-east-1.rds.amazonaws.com"
+    name: "inventorydb"
+    user: "inventoryuser"
+
+# Payment Service
+paymentService:
+  replicaCount: 3
+  image:
+    repository: 294417223953.dkr.ecr.us-east-1.amazonaws.com/payment-service
+    tag: "stable"
+  resources:
+    limits:
+      cpu: "1000m"
+      memory: "1Gi"
+    requests:
+      cpu: "500m"
+      memory: "512Mi"
+  hpa:
+    enabled: true
+    minReplicas: 3
+    maxReplicas: 10
+    targetCPUUtilizationPercentage: 70
+  database:
+    host: "payment-db.cluster-xyz.us-east-1.rds.amazonaws.com"
+    name: "paymentdb"
+    user: "paymentuser"

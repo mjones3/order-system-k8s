@@ -1,0 +1,9 @@
+{
+    "Modules": [
+      {
+        "Key": "ecr",
+        "Source": "./modules/ecr",
+        "Dir": "."
+      }
+    ]
+  }

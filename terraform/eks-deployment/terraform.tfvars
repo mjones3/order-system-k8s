@@ -1,0 +1,16 @@
+# EKS Terraform Variables Example
+# Copy this file to terraform-eks.tfvars and update with your values
+
+# Docker image URIs from ECR
+order_service_image     = "294417223953.dkr.ecr.us-east-1.amazonaws.com/order-service:latest"
+inventory_service_image = "294417223953.dkr.ecr.us-east-1.amazonaws.com/inventory-service:latest"
+payment_service_image   = "294417223953.dkr.ecr.us-east-1.amazonaws.com/payment-service:latest"
+
+# Database password (use a secure password in production)
+db_password = "secretpass"
+
+# AWS region
+aws_region = "us-east-1"
+
+# Environment
+environment = "production"

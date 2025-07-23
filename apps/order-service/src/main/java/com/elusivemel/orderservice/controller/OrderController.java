@@ -37,7 +37,7 @@ public class OrderController {
     public ResponseEntity<OrderResponse> createOrder(@RequestBody OrderRequest req) {
 
         logger.info(req);
-        
+
         Order order = orderService.createOrder(req);
         OrderResponse response = new OrderResponse(order);
 

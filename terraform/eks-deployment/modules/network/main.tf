@@ -2,7 +2,7 @@
 # Use existing VPC instead of creating a new one
 #
 data "aws_vpc" "existing" {
-  id = "vpc-024c0c2f1ea047c09"  # The specific VPC where databases are deployed
+  id = "vpc-024c0c2f1ea047c09" # The specific VPC where databases are deployed
 }
 
 # Reference to the existing VPC
@@ -50,12 +50,12 @@ locals {
     for id, subnet in data.aws_subnet.all : subnet.id
     if contains(keys(subnet.tags), "Type") && subnet.tags["Type"] == "public"
   ]
-  
+
   private_subnets = [
     for id, subnet in data.aws_subnet.all : subnet.id
     if contains(keys(subnet.tags), "Type") && subnet.tags["Type"] == "private"
   ]
-  
+
   database_subnets = [
     for id, subnet in data.aws_subnet.all : subnet.id
     if contains(keys(subnet.tags), "Type") && subnet.tags["Type"] == "database"
@@ -90,7 +90,7 @@ resource "aws_route_table" "private_rt" {
     cidr_block     = "0.0.0.0/0"
     nat_gateway_id = aws_nat_gateway.nat.id
   }
-  
+
   tags = {
     Name        = "Private Route Table"
     Environment = "dev"
@@ -140,10 +140,26 @@ resource "aws_route_table_association" "public_association" {
   route_table_id = aws_route_table.public.id
 }
 
+# Tag public subnets for ALB controller
+resource "aws_ec2_tag" "public_subnet_elb_tag" {
+  count       = length(local.public_subnets)
+  resource_id = local.public_subnets[count.index]
+  key         = "kubernetes.io/role/elb"
+  value       = "1"
+}
+
 resource "aws_route_table_association" "private_assoc" {
   count          = length(local.private_subnets)
   subnet_id      = local.private_subnets[count.index]
   route_table_id = aws_route_table.private_rt.id
+}
+
+# Tag private subnets for internal ALB controller
+resource "aws_ec2_tag" "private_subnet_internal_elb_tag" {
+  count       = length(local.private_subnets)
+  resource_id = local.private_subnets[count.index]
+  key         = "kubernetes.io/role/internal-elb"
+  value       = "1"
 }
 
 resource "aws_route_table_association" "db_assoc" {
@@ -188,6 +204,18 @@ resource "aws_security_group" "postgresql-sg" {
     Name        = "PostgreSQL Security Group"
     Environment = "dev"
     project     = "order-system"
+  }
+
+  # Handle existing resources gracefully
+  lifecycle {
+    create_before_destroy = true
+    ignore_changes = [
+      # Ignore changes to tags
+      tags,
+      # Ignore changes to ingress/egress rules
+      ingress,
+      egress
+    ]
   }
 }
 

@@ -100,6 +100,17 @@ resource "aws_iam_role" "sfn_role" {
     Environment = "dev"
     project     = "order-system"
   }
+
+  # Handle existing resources gracefully
+  lifecycle {
+    create_before_destroy = true
+    ignore_changes = [
+      # Ignore changes to tags
+      tags,
+      # Ignore changes to the assume role policy
+      assume_role_policy
+    ]
+  }
 }
 
 resource "aws_iam_role_policy_attachment" "sfn_xray_policy" {
@@ -127,6 +138,17 @@ resource "aws_iam_role" "lambda_exec_role" {
   tags = {
     Environment = "dev"
     project     = "order-system"
+  }
+
+  # Handle existing resources gracefully
+  lifecycle {
+    create_before_destroy = true
+    ignore_changes = [
+      # Ignore changes to tags
+      tags,
+      # Ignore changes to the assume role policy
+      assume_role_policy
+    ]
   }
 }
 

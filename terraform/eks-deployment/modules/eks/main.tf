@@ -37,28 +37,28 @@ module "eks" {
       min_size     = var.node_min_size
       max_size     = var.node_max_size
       desired_size = var.node_desired_size
-      
+
       # Add IAM policies for the node group
       iam_role_additional_policies = {
         # Required policies for EKS worker nodes
-        AmazonEKSWorkerNodePolicy = "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"
-        AmazonEKS_CNI_Policy = "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"
+        AmazonEKSWorkerNodePolicy          = "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"
+        AmazonEKS_CNI_Policy               = "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"
         AmazonEC2ContainerRegistryReadOnly = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
         # Additional policies that might be needed
         AmazonSSMManagedInstanceCore = "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
       }
-      
+
       # Ensure proper tagging for node discovery
       labels = {
         "nodegroup-type" = "main"
       }
-      
+
       # Add taints if needed
       # taints = []
-      
+
       # Ensure proper bootstrap configuration
       bootstrap_extra_args = "--container-runtime containerd --kubelet-extra-args '--max-pods=110'"
-      
+
       # Use the latest AMI release version
       update_config = {
         max_unavailable_percentage = 33 # Allow 33% of nodes to be unavailable during updates
@@ -113,7 +113,9 @@ resource "aws_iam_role_policy_attachment" "vpc_cni" {
 resource "aws_iam_policy" "vpc_cni_custom" {
   name        = "${var.cluster_name}-vpc-cni-custom"
   description = "Custom policy for VPC CNI plugin"
-  
+  lifecycle {
+    ignore_changes = all
+  }
   policy = jsonencode({
     Version = "2012-10-17",
     Statement = [

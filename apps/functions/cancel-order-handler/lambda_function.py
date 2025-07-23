@@ -1,89 +1,73 @@
-import os
 import json
-import logging
+import os
 import urllib.request
-import urllib.error
+import urllib.parse
+import logging
 
-# Use the Lambda’s built‑in logger
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
-# This env var must be configured in your Lambda’s settings
-API_ENDPOINT = os.environ["API_ENDPOINT_CANCEL_ORDER"]  
-
-
 def lambda_handler(event, context):
-    """
-    event: either
-      {"items": [ {"itemNumber":"A1","quantity":2}, ... ] }
-    or directly:
-      [ {"itemNumber":"A1","quantity":2}, ... ]
-    """
-    logger.info("--------")
-    logger.info("Received event: %s", event)
-    # input = event["input"]
-    # payload_list = input["items"]
-
-    # Normalize payload
-    # if isinstance(event, dict) and "items" in input:
-    #     payload_list = input["items"]
-    #     logger.info("payload_list: %s", payload_list)
-    # elif isinstance(event, list):
-    #     payload_list = event
-    # else:
-    #     # Unexpected shape
-    #     msg = "Event must be a list or dict with 'items' key"
-    #     logger.error(msg)
-    #     return {"statusCode":400, "body": msg}
-
-    # # Wrap in an object if your downstream expects it
-    # body_dict = {"items": payload_list}
-
-    # 1) Drill into the nested keys to get the raw JSON string
-
-    body_str = event['input']['Payload']['body']
-
-    # 2) Parse it into a Python dict (null → None, numbers → int/float, etc.)
-
-    body = json.loads(body_str)
-
-
-    # 3) Now you can safely pull out orderId
-    order_id = body.get("orderId")    # or body["orderId"]
-
-    url = "http://" + API_ENDPOINT + "/api/orders/" + str(order_id) + "/cancel"
-
-    json_bytes = json.dumps(body).encode("utf-8")
-
-    logger.info("Sending request to: %s", url)
-    req = urllib.request.Request(
-        url,
-        data=json_bytes,
-        headers={"Content-Type": "application/json"},
-        method="POST"
-    )
-
-    try:
-        with urllib.request.urlopen(req) as resp:
-            resp_body = resp.read().decode("utf-8")
-            status = resp.getcode()
-            logger.info("Downstream returned %d: %s", status, resp_body)
-            return {
-                "statusCode": status,
-                "body": resp_body
-            }
-
-    except urllib.error.HTTPError as e:
-        error_text = e.read().decode("utf-8")
-        logger.error("HTTPError %d: %s", e.code, error_text)
+    logger.info(f"Event: {json.dumps(event)}")
+    
+    # Get the API endpoint from environment variables
+    api_endpoint = os.environ.get('API_ENDPOINT_CANCEL_ORDER')
+    
+    if not api_endpoint:
+        logger.error("API_ENDPOINT_CANCEL_ORDER environment variable not set")
         return {
-            "statusCode": e.code,
-            "body": error_text
+            'statusCode': 500,
+            'body': json.dumps('API endpoint not configured')
         }
-
-    except Exception as e:
-        logger.exception("Unexpected error calling downstream API")
+    
+    try:
+        # Extract order data from the event
+        input_data = event.get('Payload', {})
+        order_id = input_data.get('orderId')
+        
+        # Prepare the request data
+        cancel_request = {
+            'orderId': order_id,
+            'reason': 'Inventory or payment failed'
+        }
+        
+        data = json.dumps(cancel_request).encode('utf-8')
+        
+        # Create the request
+        req = urllib.request.Request(
+            api_endpoint,
+            data=data,
+            headers={'Content-Type': 'application/json'}
+        )
+        
+        # Send the request to cancel the order
+        logger.info(f"Sending request to {api_endpoint}")
+        with urllib.request.urlopen(req) as response:
+            response_body = response.read()
+            logger.info(f"Response: {response_body}")
+            
+            # Parse the response
+            response_data = json.loads(response_body)
+            
+            # Return the response
+            return {
+                'statusCode': response.getcode(),
+                'body': response_data,
+                'orderId': order_id
+            }
+    
+    except urllib.error.HTTPError as e:
+        logger.error(f"HTTPError: {e.code} - {e.reason}")
         return {
-            "statusCode": 500,
-            "body": str(e)
+            'statusCode': e.code,
+            'body': e.reason,
+            'orderId': input_data.get('orderId')
+        }
+    
+    except Exception as e:
+        logger.error(f"Error: {str(e)}")
+        return {
+            'statusCode': 500,
+            'body': str(e),
+            'orderId': input_data.get('orderId')
         }

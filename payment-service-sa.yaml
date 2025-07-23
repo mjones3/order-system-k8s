@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: payment-service-sa
+  namespace: payment-service
+  labels:
+    app: payment-service
+    part-of: order-system

@@ -46,3 +46,5 @@ echo "docker run --rm -v \$(pwd):/workspace -v ~/.aws:/root/.aws -w /workspace h
 echo ""
 echo "To check the ingress status:"
 echo "kubectl get ingress -n order-service"
+echo ""
+echo "Note: The ingress is configured to use HTTP only. If you need HTTPS, you'll need to create an ACM certificate and update the ingress annotations."

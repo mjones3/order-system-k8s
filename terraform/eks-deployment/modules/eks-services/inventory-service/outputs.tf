@@ -12,3 +12,8 @@ output "service_endpoint" {
   description = "Internal service endpoint"
   value       = "${kubernetes_service.inventory_service.metadata[0].name}.${kubernetes_namespace.inventory_service.metadata[0].name}.svc.cluster.local"
 }
+
+output "alb_endpoint" {
+  description = "The ALB endpoint for the inventory service"
+  value       = "http://${kubernetes_ingress_v1.inventory_service_ingress.status.0.load_balancer.0.ingress.0.hostname}/api/inventory"
+}

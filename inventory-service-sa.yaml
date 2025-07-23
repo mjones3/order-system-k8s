@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: inventory-service-sa
+  namespace: inventory-service
+  labels:
+    app: inventory-service
+    part-of: inventory-system

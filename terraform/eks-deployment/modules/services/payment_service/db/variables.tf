@@ -7,7 +7,7 @@ variable "allocated_storage" {
 variable "engine_version" {
   description = "PostgreSQL engine version."
   type        = string
-  default     = "13.7"
+  default     = "17.4"
 }
 
 variable "instance_class" {
@@ -35,7 +35,7 @@ variable "password" {
 variable "parameter_group_name" {
   description = "Parameter group name for the DB instance."
   type        = string
-  default     = "default.postgres13"
+  default     = "default.postgres17"
 }
 
 variable "publicly_accessible" {

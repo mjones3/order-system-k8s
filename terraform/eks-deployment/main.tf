@@ -101,11 +101,11 @@ module "lambda" {
   aws_iam_role_sfn_role_arn      = module.iam.aws_iam_role_sfn_role_arn
   lambda_exec_role_arn           = module.iam.lambda_exec_role_arn
   aws_lambda_assume_role_arn     = module.iam.aws_lambda_assume_role_arn
-  api_endpoint_orders            = "http://${module.eks_order_service.service_endpoint}"
-  api_endpoint_inventory         = "http://${module.eks_inventory_service.service_endpoint}"
-  api_endpoint_payment           = "http://${module.eks_payment_service.service_endpoint}"
-  api_endpoint_cancel_order      = "http://${module.eks_order_service.service_endpoint}"
-  api_endpoint_release_inventory = "http://${module.eks_inventory_service.service_endpoint}"
+  api_endpoint_orders            = module.eks_order_service.alb_endpoint
+  api_endpoint_inventory         = module.eks_inventory_service.alb_endpoint
+  api_endpoint_payment           = module.eks_payment_service.alb_endpoint
+  api_endpoint_cancel_order      = "${module.eks_order_service.alb_endpoint}/cancel"
+  api_endpoint_release_inventory = "${module.eks_inventory_service.alb_endpoint}/release"
 }
 
 # Step Functions API
@@ -143,7 +143,7 @@ module "inventory_service_db" {
   instance_class         = "db.t3.micro"
   db_name                = "inventorydb"
   username               = "inventoryuser"
-  password               = var.db_password
+  password               = "password123" # Updated password
   task_role_arn          = ""
   publicly_accessible    = false
   vpc_security_group_ids = [module.network.postgresql-sg]
@@ -160,11 +160,11 @@ module "inventory_service_db" {
 module "payment_service_db" {
   source                 = "./modules/services/payment_service/db"
   allocated_storage      = 20
-  engine_version         = "17.2"
+  engine_version         = "17.4"
   instance_class         = "db.t3.micro"
   db_name                = "paymentdb"
   username               = "paymentuser"
-  password               = var.db_password
+  password               = "password123" # Updated password
   task_role_arn          = ""
   publicly_accessible    = false
   vpc_security_group_ids = [module.network.postgresql-sg]
@@ -177,8 +177,6 @@ module "payment_service_db" {
     project     = "order-system"
   }
 }
-
-# Removed duplicate alb_controller module
 
 # EKS Service Deployments
 module "eks_order_service" {
@@ -194,7 +192,7 @@ module "eks_order_service" {
   min_replicas  = 2
   max_replicas  = 10
 
-  depends_on = [module.eks, module.aws_lb_controller]
+  depends_on = [module.eks, module.alb_controller]
 }
 
 module "eks_inventory_service" {
@@ -203,14 +201,14 @@ module "eks_inventory_service" {
   inventory_service_image = var.inventory_service_image
   db_name                 = "inventorydb"
   db_username             = "inventoryuser"
-  db_password             = var.db_password
+  db_password             = "password123" # Updated password
   rds_endpoint            = module.inventory_service_db.rds_endpoint
 
   replica_count = 2
   min_replicas  = 2
   max_replicas  = 10
 
-  depends_on = [module.eks]
+  depends_on = [module.eks, module.alb_controller]
 }
 
 module "eks_payment_service" {
@@ -219,12 +217,12 @@ module "eks_payment_service" {
   payment_service_image = var.payment_service_image
   db_name               = "paymentdb"
   db_username           = "paymentuser"
-  db_password           = var.db_password
+  db_password           = "password123" # Updated password
   rds_endpoint          = module.payment_service_db.rds_endpoint
 
   replica_count = 2
   min_replicas  = 2
   max_replicas  = 10
 
-  depends_on = [module.eks]
+  depends_on = [module.eks, module.alb_controller]
 }

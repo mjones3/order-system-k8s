@@ -121,6 +121,15 @@ EOF
     project     = "order-system"
   }
   tracing_configuration { enabled = true }
+
+  # Handle existing resources gracefully
+  lifecycle {
+    create_before_destroy = true
+    ignore_changes = [
+      # Ignore changes to tags
+      tags
+    ]
+  }
 }
 
 
@@ -130,6 +139,9 @@ resource "aws_lambda_function" "order_service" {
   runtime       = "python3.9"                      # or your preferred Python version
   role          = var.aws_lambda_assume_role_arn
   filename      = "../apps/functions/order-service-handler/orderServiceFunction.zip" # your deployment package ZIP file
+  timeout       = 30                                                                 # Increase timeout to 30 seconds
+  memory_size   = 256                                                                # Increase memory to 256 MB
+
   environment {
     variables = {
       API_ENDPOINT_ORDERS = var.api_endpoint_orders
@@ -142,6 +154,19 @@ resource "aws_lambda_function" "order_service" {
     Environment = "dev"
     project     = "order-system"
   }
+
+  # Handle existing resources gracefully
+  lifecycle {
+    create_before_destroy = true
+    ignore_changes = [
+      # Ignore changes to tags
+      tags,
+      # Ignore changes to environment variables
+      environment,
+      # Ignore changes to the filename
+      filename
+    ]
+  }
 }
 
 resource "aws_lambda_function" "inventory_service" {
@@ -150,6 +175,8 @@ resource "aws_lambda_function" "inventory_service" {
   runtime       = "python3.9"                      # or your preferred Python version
   role          = var.aws_lambda_assume_role_arn
   filename      = "../apps/functions/inventory-service-handler/inventoryServiceFunction.zip" # your deployment package ZIP file
+  timeout       = 30                                                                         # Increase timeout to 30 seconds
+  memory_size   = 256                                                                        # Increase memory to 256 MB
 
   environment {
     variables = {
@@ -163,6 +190,19 @@ resource "aws_lambda_function" "inventory_service" {
     Environment = "dev"
     project     = "order-system"
   }
+
+  # Handle existing resources gracefully
+  lifecycle {
+    create_before_destroy = true
+    ignore_changes = [
+      # Ignore changes to tags
+      tags,
+      # Ignore changes to environment variables
+      environment,
+      # Ignore changes to the filename
+      filename
+    ]
+  }
 }
 
 
@@ -172,6 +212,8 @@ resource "aws_lambda_function" "payment_service" {
   runtime       = "python3.9"                      # or your preferred Python version
   role          = var.aws_lambda_assume_role_arn
   filename      = "../apps/functions/payment-service-handler/paymentServiceFunction.zip" # your deployment package ZIP file
+  timeout       = 30                                                                     # Increase timeout to 30 seconds
+  memory_size   = 256                                                                    # Increase memory to 256 MB
 
   environment {
     variables = {
@@ -182,6 +224,23 @@ resource "aws_lambda_function" "payment_service" {
   tracing_config {
     mode = "Active"
   }
+  tags = {
+    Environment = "dev"
+    project     = "order-system"
+  }
+
+  # Handle existing resources gracefully
+  lifecycle {
+    create_before_destroy = true
+    ignore_changes = [
+      # Ignore changes to tags
+      tags,
+      # Ignore changes to environment variables
+      environment,
+      # Ignore changes to the filename
+      filename
+    ]
+  }
 }
 
 resource "aws_lambda_function" "release_inventory" {
@@ -190,6 +249,8 @@ resource "aws_lambda_function" "release_inventory" {
   runtime       = "python3.9"                      # or your preferred Python version
   role          = var.aws_lambda_assume_role_arn
   filename      = "../apps/functions/release-inventory-handler/releaseInventoryFunction.zip" # your deployment package ZIP file
+  timeout       = 30                                                                         # Increase timeout to 30 seconds
+  memory_size   = 256                                                                        # Increase memory to 256 MB
 
   environment {
     variables = {
@@ -198,6 +259,23 @@ resource "aws_lambda_function" "release_inventory" {
   }
   tracing_config {
     mode = "Active"
+  }
+  tags = {
+    Environment = "dev"
+    project     = "order-system"
+  }
+
+  # Handle existing resources gracefully
+  lifecycle {
+    create_before_destroy = true
+    ignore_changes = [
+      # Ignore changes to tags
+      tags,
+      # Ignore changes to environment variables
+      environment,
+      # Ignore changes to the filename
+      filename
+    ]
   }
 }
 
@@ -208,6 +286,8 @@ resource "aws_lambda_function" "cancel_order" {
   runtime       = "python3.9"                      # or your preferred Python version
   role          = var.aws_lambda_assume_role_arn
   filename      = "../apps/functions/cancel-order-handler/cancelOrderFunction.zip" # your deployment package ZIP file
+  timeout       = 30                                                               # Increase timeout to 30 seconds
+  memory_size   = 256                                                              # Increase memory to 256 MB
 
   environment {
     variables = {
@@ -216,5 +296,22 @@ resource "aws_lambda_function" "cancel_order" {
   }
   tracing_config {
     mode = "Active"
+  }
+  tags = {
+    Environment = "dev"
+    project     = "order-system"
+  }
+
+  # Handle existing resources gracefully
+  lifecycle {
+    create_before_destroy = true
+    ignore_changes = [
+      # Ignore changes to tags
+      tags,
+      # Ignore changes to environment variables
+      environment,
+      # Ignore changes to the filename
+      filename
+    ]
   }
 }

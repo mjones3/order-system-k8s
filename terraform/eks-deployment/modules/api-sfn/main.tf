@@ -16,6 +16,17 @@ resource "aws_iam_role" "apigw_sfn_role" {
     Environment = "dev"
     project     = "order-system"
   }
+
+  # Handle existing resources gracefully
+  lifecycle {
+    create_before_destroy = true
+    ignore_changes = [
+      # Ignore changes to tags
+      tags,
+      # Ignore changes to the assume role policy
+      assume_role_policy
+    ]
+  }
 }
 
 # 2) Grant that role permission to start your state machine
@@ -38,6 +49,14 @@ resource "aws_iam_role_policy" "apigw_sfn_policy" {
 resource "aws_apigatewayv2_api" "orders_api" {
   name          = "orders-saga-api"
   protocol_type = "HTTP"
+
+  cors_configuration {
+    allow_headers = ["Content-Type", "X-Amz-Date", "Authorization", "X-Api-Key", "X-Amz-Security-Token"]
+    allow_methods = ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
+    allow_origins = ["*"] # In production, you should restrict this to specific origins
+    max_age       = 300
+  }
+
   tags = {
     Environment = "dev"
     project     = "order-system"

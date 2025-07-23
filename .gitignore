@@ -63,3 +63,12 @@ apps/inventory-service/target/classes/com/elusivemel/inventoryservice/repository
 apps/inventory-service/target/classes/com/elusivemel/inventoryservice/util/InventoryUtil.class
 apps/inventory-service/target/test-classes/com/elusivemel/inventory_service/InventoryServiceApplicationTests.class
 terraform/eks-deployment/.terraform.lock.hcl
+apps/functions/cancel-order-handler/cancel-orderFunction.zip
+apps/functions/inventory-service-handler/inventory-serviceFunction.zip
+apps/functions/order-service-handler/order-serviceFunction.zip
+apps/functions/payment-service-handler/payment-serviceFunction.zip
+apps/functions/release-inventory-handler/release-inventoryFunction.zip
+terraform/eks-deployment/main.tf.new
+terraform/eks-deployment/payment-ingress.tfplan
+terraform/eks-deployment/payment-service.tfplan
+terraform/eks-deployment/step-functions.tfplan
